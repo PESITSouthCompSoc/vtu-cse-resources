@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1431001434 source:e:\other\work\repositories\vtu-resources\cglab\02_liang_barsky\main.cpp
+	<iostream>
+	<GL/glut.h>
+

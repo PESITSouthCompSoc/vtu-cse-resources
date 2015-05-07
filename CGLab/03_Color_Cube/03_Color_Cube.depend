@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1431006126 source:e:\other\work\repositories\vtu-resources\cglab\03_color_cube\main.cpp
+	<iostream>
+	<GL/glut.h>
+

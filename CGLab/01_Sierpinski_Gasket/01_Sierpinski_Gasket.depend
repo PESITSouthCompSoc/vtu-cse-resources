@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1430985780 source:e:\other\work\repositories\vtu-resources\cglab\01_sierpinski_gasket\main.cpp
+	<iostream>
+	<GL/glut.h>
+

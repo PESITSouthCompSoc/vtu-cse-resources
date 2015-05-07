@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1431007285 source:e:\other\work\repositories\vtu-resources\cglab\08_colorcube_perspective\main.cpp
+	<iostream>
+	<GL/glut.h>
+	<windows.h>
+

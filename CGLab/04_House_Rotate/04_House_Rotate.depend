@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1430993047 source:e:\other\work\repositories\vtu-resources\cglab\04_house_rotate\main.cpp
+	<iostream>
+	<GL/glut.h>
+	<math.h>
+

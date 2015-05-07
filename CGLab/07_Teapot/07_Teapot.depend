@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1430995972 source:e:\other\work\repositories\vtu-resources\cglab\07_teapot\main.cpp
+	<iostream>
+	<GL/glut.h>
+
