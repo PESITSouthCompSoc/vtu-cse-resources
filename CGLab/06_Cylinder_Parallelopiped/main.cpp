@@ -10,7 +10,7 @@ void display();
 void initialize();
 
 
-int cx=300, cy=300, radius=50;
+int cx=400, cy=400, radius=100;
 int xmin=20, ymin=20, xmax=200, ymax=200;
 int iterations=15;
 
@@ -35,7 +35,17 @@ void parallelopiped()
 
 void symPixels(float h, float k, float x, float y)
 {
+    glBegin(GL_POINTS);
+        glVertex2f(x+h,y+k);
+        glVertex2f(-x+h,y+k);
+        glVertex2f(-x+h,-y+k);
+        glVertex2f(x+h,-y+k);
 
+        glVertex2f(y+h,x+k);
+        glVertex2f(-y+h,x+k);
+        glVertex2f(-y+h,-x+k);
+        glVertex2f(y+h,-x+k);
+    glEnd();
 }
 
 void circle(float h, float k, float r)
@@ -62,12 +72,23 @@ void cylinder()
 
     for(i=0, step=0; i<iterations; i++, step+=YSTEP)
     {
-        circle(cx+step,cy+step,radius);
+        circle(cx,cy+step,radius);
     }
 }
 
 int main(int argc, char ** argv)
 {
+    cout << "Enter the following :-\n\nIterations: ";
+    cin >> iterations;
+    cout << "Values of xmin, ymin, xmax, ymax for the Parallelepiped (in that order):\n";
+    cin >> xmin >> ymin >> xmax >> ymax ;
+
+    cout << "Co-ordinates (x y) for center of cylinder's base: ";
+    cin >> cx >> cy;
+
+    cout <<"Radius of the cylinder:";
+    cin >> radius;
+
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_SINGLE|GLUT_RGB);
     glutInitWindowPosition(0,0);
@@ -85,7 +106,8 @@ void display()
 
     glColor3f(1.0,0.0,0.0);
     parallelopiped();
-
+    glColor3f(0.0,0.0,1.0);
+    cylinder();
     glFlush();
 }
 
