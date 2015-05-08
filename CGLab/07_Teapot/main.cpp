@@ -21,6 +21,8 @@ void wall(float thickness)
 void leg(float legThick, float legLen)
 {
     glPushMatrix();
+    glTranslated(0,legLen/2,0);
+    glScaled(legThick,legLen,legThick);
     glutSolidCube(1.0);
     glPopMatrix();
 }
@@ -31,6 +33,7 @@ void leg(float legThick, float legLen)
 
 void table(float topWidth, float topThick, float legThick, float legLen)
 {
+    double dist = 0.95*topWidth/2.0 - legThick/2.0; //dist from center of table
     //top
     glPushMatrix();
     glTranslated(0.0,legLen,0.0);
@@ -38,7 +41,16 @@ void table(float topWidth, float topThick, float legThick, float legLen)
     glutSolidCube(1.0);
     glPopMatrix();
 
-    //leg(legThick, legLen);
+    glPushMatrix();
+    glTranslated(dist, 0, dist);
+    leg(legThick, legLen);
+    glTranslated(0,0,-2.0*dist);
+    leg(legThick, legLen);
+    glTranslated(-2.0*dist,0,0);
+    leg(legThick, legLen);
+    glTranslated(0,0,2.0*dist);
+    leg(legThick, legLen);
+    glPopMatrix();
 }
 
 void display()
@@ -55,7 +67,7 @@ void display()
     gluLookAt(2.3,1.3,2,0.0,0.0,0.0,0.0,1.0,0.0);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-    //glTranslated(0.0,-0.25,0.0);
+    glTranslated(0.0,-0.25,0.0);
 
     wall(0.02);
     glPushMatrix();
@@ -69,8 +81,13 @@ void display()
 
     glPushMatrix();
     glTranslated(0.4,0,0.4);
-    table(0.6,0.02,0.02,0.3);
+    table(0.55,0.02,0.02,0.4);
+    glTranslated(0,0.02+0.4+(0.07/2),0);
+    glutSolidTeapot(0.07);
+    glPopMatrix();
     glFlush();
+
+
 }
 
 
