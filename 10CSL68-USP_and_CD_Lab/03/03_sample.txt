@@ -1,0 +1,35 @@
+$:> g++ 03.cpp -o 03.out
+$:> ./03.out
+usage: ./03.out <example_file_to_demo_locking>
+$:> ls
+03.cpp  03.out  file.txt
+
+
+/ *********** Terminal 1 (simultaneously) ************** /
+
+$:> ./03.out file.txt
+
+Process with pid 22005 has ACQUIRED the lock on the last 100 bytes of the file file.txt.
+Contents of last 50 bytes of the file: 
+
+"
+cies turpis non laoreet. This is the last line. =)
+"
+
+Process with pid 22005 has RELEASED the lock on the last 100 bytes of the file file.txt.
+
+
+
+/ *********** Terminal 2 (simultaneously) ************** / 
+$:> ./03.out file.txt
+
+A process with pid: 22005 is already holding a write lock on the required region of the file file.txt.
+
+Process with pid 22006 has ACQUIRED the lock on the last 100 bytes of the file file.txt.
+Contents of last 50 bytes of the file: 
+
+"
+cies turpis non laoreet. This is the last line. =)
+"
+
+Process with pid 22006 has RELEASED the lock on the last 100 bytes of the file file.txt.

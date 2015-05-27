@@ -1,0 +1,14 @@
+$:> g++ 10.cpp -o 10.out
+$:> ./10.out
+First time alarm hits!
+6 seconds.
+8 seconds.
+10 seconds.
+12 seconds.
+14 seconds.
+16 seconds.
+18 seconds.
+20 seconds.
+22 seconds.
+^C
+Interrupt occurred. Program now exits..

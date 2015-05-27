@@ -1,0 +1,34 @@
+$:> g++ 07.cpp -o zombie
+$:> ./zombie
+Child process with PID 22228 created by its parent with PID 22227.
+  PID  PPID S COMMAND
+21444 21434 S bash
+22227 21444 S zombie
+22228 22227 S zombie
+22229 22228 S sh
+22230 22229 R ps
+Child process exits ..
+
+
+
+Parent process with PID 22227 resumes execution and calls ps:- 
+  PID  PPID S COMMAND
+21444 21434 S bash
+22227 21444 S zombie
+22228 22227 Z zombie <defunct>
+22231 22227 S sh
+22232 22231 R ps
+As seen above, child is a zombie process as the parent has not executed wait(2).
+
+
+
+
+Parent now executes wait..Process table after execution of wait:-
+  PID  PPID S COMMAND
+21444 21434 S bash
+22227 21444 S zombie
+22233 22227 S sh
+22234 22233 R ps
+Child process no longer exists in the process table.
+Parent exits..
+

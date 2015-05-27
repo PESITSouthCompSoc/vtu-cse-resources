@@ -1,0 +1,11 @@
+$:> g++ 02.cpp -o 02.out
+$:> ./02.out
+Testing features.. 
+
+Job control is supported.
+Processes have a saved set-user-ID and a saved set-group-ID.
+POSIX.4 clocks and timers are supported.
+POSIX.1c pthreads are supported.
+_POSIX_CHOWN_RESTRICTED option is defined with value: 0
+_POSIX_NO_TRUNC option is defined with value: 1
+

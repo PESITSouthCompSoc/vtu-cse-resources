@@ -48,16 +48,16 @@ int main(int argc, char ** argv)
 	else if(pid==0)
 	{
 		//within the child process
-		waitParent(); //L1
+		//waitParent(); //L1
 		printOne("output from child\n");
-		tellParent(); //L2
+		//tellParent(); //L2
 		return 0;
 	}
 	else
 	{
 		//within the parent process
-		tellChild(); //L3
-		waitChild(); //L4
+		//tellChild(); //L3
+		//waitChild(); //L4
 		printOne("output from parent\n");
 		return 0;
 	}

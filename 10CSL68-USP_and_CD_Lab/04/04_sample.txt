@@ -1,0 +1,41 @@
+
+$:> g++ 04_reader.cpp -o reader
+$:> g++ 04_writer.cpp -o writer
+$:> ls
+04_reader.cpp 04_writer.cpp  reader  writer
+
+$:> ./reader
+Required FIFO file doesn't exist. Please start the writer process first.
+
+/ *********** Terminal 1 (simultaneously) ************** /
+
+$:> ./writer
+Waiting for a reader process .. 
+Writer (22073) got a reader process ..
+
+Writer writes:
+hello
+Writer writes:
+world!
+Writer writes:
+=)
+Writer writes:
+^C
+Interrupt encountered.
+Writer exits and deletes FIFO file.
+
+/ *********** Terminal 2 (simultaneously) ************** / 
+
+$:> ./reader
+Required FIFO file doesn't exist. Please start the writer process first.
+$:> ./reader
+Reader (22074) got a writer process ..
+
+Reader reads:
+hello
+Reader reads:
+world!
+Reader reads:
+=)
+Reader reads:
+read: Success

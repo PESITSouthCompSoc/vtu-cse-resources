@@ -1,0 +1,27 @@
+$:> g++ 08.cpp -o 08.out
+$:> ./08.out
+
+
+First Child
+	PID: 22246
+	PPID: 22245.
+First child forks again..
+
+
+Second Child
+	PID: 22247
+	PPID: 22246.
+
+Second child sleeps..
+
+First child terminates ..
+
+  PID  PPID S COMMAND
+21444 21434 S bash
+22245 21444 S 08.out
+22247  1614 S 08.out
+22248 22247 S sh
+22249 22248 R ps
+
+Second child's PPID is now: 1614 (init)
+Parent terminates..

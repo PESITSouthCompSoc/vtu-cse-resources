@@ -62,18 +62,32 @@
 
 
 /* Copy the first part of user declarations.  */
-#line 1 "12_pristine.y" /* yacc.c:339  */
+#line 1 "12.y" /* yacc.c:339  */
 
+/*
+	* Documented by:
+		Aditi Mohanty
+		github.com/rheaditi
+
+	* Problem Statement:
+		Write a yacc program that accepts a regular expression
+		as input and produces its parse tree as output.
+
+*/
+/* Declaration section, copied verbatim to the oupud y.tab.c file */
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include <stdlib.h> //for exit()
+#include <string.h> // for strcpy(), strlen()
+#include <ctype.h> //for isalpha()
 #define MAX 100
-int getREindex(const char *);
-char productions[MAX][MAX];
-int count=0, i, j;
-char temp[200], temp2[200];
 
-#line 77 "y.tab.c" /* yacc.c:339  */
+char productions[MAX][MAX];
+char temp1[2*MAX], temp2[2*MAX];
+int count=0, i, j;
+
+int getREindex(const char *str);
+
+#line 91 "y.tab.c" /* yacc.c:339  */
 
 # ifndef YY_NULLPTR
 #  if defined __cplusplus && 201103L <= __cplusplus
@@ -130,7 +144,7 @@ int yyparse (void);
 
 /* Copy the second part of user declarations.  */
 
-#line 134 "y.tab.c" /* yacc.c:358  */
+#line 148 "y.tab.c" /* yacc.c:358  */
 
 #ifdef short
 # undef short
@@ -372,7 +386,7 @@ union yyalloc
 /* YYFINAL -- State number of the termination state.  */
 #define YYFINAL  6
 /* YYLAST -- Last index in YYTABLE.  */
-#define YYLAST   21
+#define YYLAST   20
 
 /* YYNTOKENS -- Number of terminals.  */
 #define YYNTOKENS  11
@@ -381,7 +395,7 @@ union yyalloc
 /* YYNRULES -- Number of rules.  */
 #define YYNRULES  8
 /* YYNSTATES -- Number of states.  */
-#define YYNSTATES  15
+#define YYNSTATES  14
 
 /* YYTRANSLATE[YYX] -- Symbol number corresponding to YYX as returned
    by yylex, with out-of-bounds checking.  */
@@ -427,7 +441,7 @@ static const yytype_uint8 yytranslate[] =
   /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    19,    19,    43,    48,    51,    54,    57,    60
+       0,    33,    33,    58,    63,    66,    69,    72,    75
 };
 #endif
 
@@ -465,8 +479,8 @@ static const yytype_uint16 yytoknum[] =
      STATE-NUM.  */
 static const yytype_int8 yypact[] =
 {
-       4,    -5,     4,     8,    10,    -4,    -5,     4,     4,    -5,
-      -5,    -5,    -5,    14,     5
+       1,    -5,     1,     8,     9,    -4,    -5,     1,    -5,    -5,
+      -5,    -5,    -5,    13
 };
 
   /* YYDEFACT[STATE-NUM] -- Default reduction number in state STATE-NUM.
@@ -474,14 +488,14 @@ static const yytype_int8 yypact[] =
      means the default is an error.  */
 static const yytype_uint8 yydefact[] =
 {
-       0,     3,     0,     0,     0,     0,     1,     0,     0,     5,
-       6,     2,     4,     7,     8
+       0,     3,     0,     0,     0,     0,     1,     0,     8,     5,
+       6,     2,     4,     7
 };
 
   /* YYPGOTO[NTERM-NUM].  */
 static const yytype_int8 yypgoto[] =
 {
-      -5,    -5,     2
+      -5,    -5,     5
 };
 
   /* YYDEFGOTO[NTERM-NUM].  */
@@ -495,16 +509,16 @@ static const yytype_int8 yydefgoto[] =
      number is the opposite.  If YYTABLE_NINF, syntax error.  */
 static const yytype_uint8 yytable[] =
 {
-       7,     8,     9,    10,     5,     0,    12,     1,     6,    13,
-      14,     9,    10,     2,     7,     8,     9,    10,    11,     8,
-       9,    10
+       7,     8,     9,    10,     1,     0,    12,     5,     6,     0,
+       2,     0,    13,     7,     8,     9,    10,    11,     8,     9,
+      10
 };
 
 static const yytype_int8 yycheck[] =
 {
-       4,     5,     6,     7,     2,    -1,    10,     3,     0,     7,
-       8,     6,     7,     9,     4,     5,     6,     7,     8,     5,
-       6,     7
+       4,     5,     6,     7,     3,    -1,    10,     2,     0,    -1,
+       9,    -1,     7,     4,     5,     6,     7,     8,     5,     6,
+       7
 };
 
   /* YYSTOS[STATE-NUM] -- The (internal number of the) accessing
@@ -512,7 +526,7 @@ static const yytype_int8 yycheck[] =
 static const yytype_uint8 yystos[] =
 {
        0,     3,     9,    12,    13,    13,     0,     4,     5,     6,
-       7,     8,    10,    13,    13
+       7,     8,    10,    13
 };
 
   /* YYR1[YYN] -- Symbol number of symbol that rule YYN derives.  */
@@ -524,7 +538,7 @@ static const yytype_uint8 yyr1[] =
   /* YYR2[YYN] -- Number of symbols on the right hand side of rule YYN.  */
 static const yytype_uint8 yyr2[] =
 {
-       0,     2,     2,     1,     3,     2,     2,     3,     3
+       0,     2,     2,     1,     3,     2,     2,     3,     2
 };
 
 
@@ -1201,85 +1215,86 @@ yyreduce:
   switch (yyn)
     {
         case 2:
-#line 19 "12_pristine.y" /* yacc.c:1646  */
+#line 33 "12.y" /* yacc.c:1646  */
     {
-	printf("Right-most derivation:-\n");
-	for(i=count-1; i>=0; --i)
+	/* This occurs at the end of parsing, therefore we must print the output accordingly */
+	printf("The right-most derivation is:- \n");
+	for( i=count-1; i>=0; i-- )
 	{
-		if(i==count-1)
+		if(i == count-1)
 		{
 			printf("\nre => ");
-			strcpy(temp,productions[i]);
+			strcpy(temp1,productions[i]);
 			printf("%s",productions[i]);
 		}
-		else 
+		else
 		{
-			printf("\n => ");
-			j = getREindex(temp);
-			temp[j] = '\0';
-			sprintf(temp2, "%s%s%s", temp, productions[i], (temp+j+2));
+			printf("\n=> ");
+			j = getREindex(temp1);
+			temp1[j]='\0';
+			sprintf(temp2,"%s%s%s",temp1,productions[i],(temp1+j+2));			
 			printf("%s",temp2);
-			strcpy(temp,temp2);
+			strcpy(temp1,temp2);
 		}
 	}
 	printf("\n");
 	exit(0);
 }
-#line 1229 "y.tab.c" /* yacc.c:1646  */
+#line 1244 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 3:
-#line 43 "12_pristine.y" /* yacc.c:1646  */
+#line 58 "12.y" /* yacc.c:1646  */
     {
-	temp[0] = yylval;
-	temp[1] = '\0';
-	strcpy(productions[count++],temp);
+	temp1[0]=yylval;
+	temp1[1]='\0';
+	strcpy(productions[count++],temp1);
 }
-#line 1239 "y.tab.c" /* yacc.c:1646  */
+#line 1254 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 4:
-#line 48 "12_pristine.y" /* yacc.c:1646  */
+#line 63 "12.y" /* yacc.c:1646  */
     {
 	strcpy(productions[count++],"(re)");
 }
-#line 1247 "y.tab.c" /* yacc.c:1646  */
+#line 1262 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 5:
-#line 51 "12_pristine.y" /* yacc.c:1646  */
+#line 66 "12.y" /* yacc.c:1646  */
     {
 	strcpy(productions[count++],"re*");
 }
-#line 1255 "y.tab.c" /* yacc.c:1646  */
+#line 1270 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 6:
-#line 54 "12_pristine.y" /* yacc.c:1646  */
+#line 69 "12.y" /* yacc.c:1646  */
     {
 	strcpy(productions[count++],"re+");
 }
-#line 1263 "y.tab.c" /* yacc.c:1646  */
+#line 1278 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 7:
-#line 57 "12_pristine.y" /* yacc.c:1646  */
+#line 72 "12.y" /* yacc.c:1646  */
     {
 	strcpy(productions[count++],"re | re");
 }
-#line 1271 "y.tab.c" /* yacc.c:1646  */
+#line 1286 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 8:
-#line 60 "12_pristine.y" /* yacc.c:1646  */
+#line 75 "12.y" /* yacc.c:1646  */
     {
 	strcpy(productions[count++],"re . re");
 }
-#line 1279 "y.tab.c" /* yacc.c:1646  */
+#line 1294 "y.tab.c" /* yacc.c:1646  */
     break;
 
 
-#line 1283 "y.tab.c" /* yacc.c:1646  */
+#line 1298 "y.tab.c" /* yacc.c:1646  */
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
@@ -1507,10 +1522,10 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 65 "12_pristine.y" /* yacc.c:1906  */
+#line 80 "12.y" /* yacc.c:1906  */
 
 
-int main( int argc, char ** argv)
+int main()
 {
 	printf("Enter expression:\n");
 	yyparse();
@@ -1520,7 +1535,7 @@ int main( int argc, char ** argv)
 yylex()
 {
 	char ch = getchar();
-	yylval = ch;
+	yylval=ch;
 	if( isalpha(ch) )
 		return ALPHABET;
 	else
@@ -1529,16 +1544,18 @@ yylex()
 
 yyerror()
 {
-	fprintf(stderr, "Invalid Regular Expression!\n");
+	fprintf(stderr,"Invalid Regular Expression.\n");
 	exit(1);
 }
 
-int getREindex(const char * str)
+int getREindex(const char *str)
 {
 	int i;
-	for( i =strlen(str); i>=0; i--)
+	for(i=strlen(str); i>=0; i--)
 	{
-		if(str[i]=='e' && str[i-1] =='r')
+		if( (str[i]=='e') && (str[i-1]=='r') )
+		{
 			return (i-1);
+		}
 	}
 }

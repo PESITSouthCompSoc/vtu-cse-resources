@@ -1,0 +1,18 @@
+$:> g++ 11.c -o 11.out
+$:> ./11.out
+Example if-else structures:-
+if (a<=5) then (x++);
+if (b>10) then (a=b) else (a=c);
+
+
+Enter statement:
+if (age>=21) then (canDrink=true) else (canDrink=false);
+
+
+Generated output:
+if (age>=21) goto 666
+goto 667
+666 : (canDrink=true)
+goto 668
+667 : (canDrink=false)
+668 : STOP

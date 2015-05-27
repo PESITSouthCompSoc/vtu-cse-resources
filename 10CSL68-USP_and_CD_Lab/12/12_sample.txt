@@ -1,0 +1,13 @@
+$:> yacc -d 12.y
+$:> cc y.tab.c y.tab.h -o 12.out
+
+$:> ./12.out
+Enter expression:
+(a*|b)
+The right-most derivation is:- 
+
+re => (re)
+=> (re | re)
+=> (re | b)
+=> (re* | b)
+=> (a* | b)

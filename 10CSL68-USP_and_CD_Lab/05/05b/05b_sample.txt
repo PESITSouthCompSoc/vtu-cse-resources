@@ -1,0 +1,17 @@
+$:> g++ 05b.cpp -o 05.out
+$:> touch file1
+$:> ls
+05b.cpp  05b.out  05.out  file1
+
+$:> ./05.out file1 file2
+Hard link created between 'file1'' and 'file2'.
+$:> ll file*
+-rw-rw-r-- 2 aditi aditi 0 May 27 21:47 file1
+-rw-rw-r-- 2 aditi aditi 0 May 27 21:47 file2
+
+$:> ./05.out -s file1 sym_file1
+Symbolic link 'sym_file1' --> 'file1' created.
+$:> ll *file*
+-rw-rw-r-- 2 aditi aditi 0 May 27 21:47 file1
+-rw-rw-r-- 2 aditi aditi 0 May 27 21:47 file2
+lrwxrwxrwx 1 aditi aditi 5 May 27 21:49 sym_file1 -> file1

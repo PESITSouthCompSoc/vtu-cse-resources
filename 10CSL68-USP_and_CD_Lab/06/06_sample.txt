@@ -1,0 +1,12 @@
+/******** Demonstrating Race Condition *********/
+$:> g++ 06.cpp -o 06.out
+$:> ./06.out
+oouuttppuutt  ffrroomm  pcharilend
+t
+
+
+/****** Un-commenting L1 to L4, to avoid race condition *****/
+$:> g++ 06.cpp -o 06.out
+$:> ./06.out
+output from child
+output from parent

@@ -1,0 +1,10 @@
+$:> g++ 01.cpp -o 01.out
+$:> ./01.out
+Run-time limits (POSIX1.b):
+
+No. of clock ticks: 100
+Maximum no. of simultaneous processes per user ID: 31035
+Maximum no. of files that a process can have open at any time: 1024
+Maximum length of a relative pathname when path is current working directory: 4096
+Maximum length of a filename in the directory that a process is allowed to create: 255
+

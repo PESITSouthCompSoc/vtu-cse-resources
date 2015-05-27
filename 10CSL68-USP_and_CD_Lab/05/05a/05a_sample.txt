@@ -1,0 +1,24 @@
+$:> g++ 05a.cpp -o 05a.out
+$:> ls
+05a.cpp  05a.out
+$:> ./05a.out
+Contents of the environment list are: 
+
+XDG_VTNR=7
+SESSION=ubuntu
+SHELL=/bin/bash
+VTE_VERSION=3409
+TERM=xterm
+XDG_MENU_PREFIX=gnome-
+GTK_MODULES=overlay-scrollbar:unity-gtk-module
+USER=aditi
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+DESKTOP_SESSION=ubuntu
+LANG=en_IN
+GDM_LANG=en_US
+COMPIZ_CONFIG_PROFILE=ubuntu
+GDMSESSION=ubuntu
+SESSIONTYPE=gnome-session
+
+
+....

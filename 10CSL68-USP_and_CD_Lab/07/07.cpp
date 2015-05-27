@@ -34,7 +34,7 @@ int main(int argc, char ** argv)
 	else if(pid==0)
 	{
 		cout << "Child process with PID " << getpid() << " created by its parent with PID " << getppid() << ".\n";
-		system("ps -aux | grep zombie");
+		system("ps -o pid,ppid,state,comm");
 		cout << "Child process exits ..\n";
 	}
 	else
@@ -42,14 +42,14 @@ int main(int argc, char ** argv)
 		sleep(8);
 		cout << "\n\n\n";
 		cout << "Parent process with PID " << getpid() << " resumes execution and calls ps:- \n";
-		system("ps -aux | grep zombie");
+		system("ps -o pid,ppid,state,comm");
 		cout << "As seen above, child is a zombie process as the parent has not executed wait(2).\n\n";
 		sleep(10);
 		cout << "\n\n\n";
 		cout << "Parent now executes wait..";
 		wait(&status);
 		cout << "Process table after execution of wait:-\n";
-		system("ps -aux | grep zombie");
+		system("ps -o pid,ppid,state,comm");
 		cout << "Child process no longer exists in the process table.\n";
 		cout << "Parent exits..\n\n";
 	}
