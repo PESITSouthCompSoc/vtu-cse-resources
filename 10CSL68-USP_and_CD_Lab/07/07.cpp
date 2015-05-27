@@ -1,7 +1,10 @@
 /*
-*	Documented by:
-		Aditi Mohanty
+*	Authored & Documented by:
+		Aditi Anomita Mohanty
 		github.com/rheaditi
+		
+		Abinav Nithya Seelan
+		github.com/abinavseelan
 
 *	Problem Statement:
 		Write a C/C++ program that creates a zombie and then calls 

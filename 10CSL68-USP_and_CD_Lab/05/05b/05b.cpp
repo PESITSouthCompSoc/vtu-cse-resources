@@ -1,7 +1,10 @@
 /*
-*	Documented by:
-		Aditi Mohanty
+*	Authored & Documented by:
+		Aditi Anomita Mohanty
 		github.com/rheaditi
+		
+		Abinav Nithya Seelan
+		github.com/abinavseelan
 
 *	Problem Statement:
 		Write a C/C++ program to emulate the unix ln command.

@@ -1,7 +1,10 @@
 /*
-	* Documented by:
-		Aditi Mohanty
+*	Authored & Documented by:
+		Aditi Anomita Mohanty
 		github.com/rheaditi
+		
+		Abinav Nithya Seelan
+		github.com/abinavseelan
 
 	* Problem Statement:
 		Write a C program for a syntax directed definition of:

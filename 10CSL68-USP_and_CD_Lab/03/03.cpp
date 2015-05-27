@@ -1,7 +1,10 @@
 /*
-*	Documented by:
-		Aditi Mohanty
+*	Authored & Documented by:
+		Aditi Anomita Mohanty
 		github.com/rheaditi
+		
+		Abinav Nithya Seelan
+		github.com/abinavseelan
 
 *	Problem Statement:
 		Consider the last 100 bytes as a region. Write a C/C++ program to check 

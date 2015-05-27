@@ -1,15 +1,18 @@
 %{
 /*
-	* Documented by:
-		Aditi Mohanty
+*	Authored & Documented by:
+		Aditi Anomita Mohanty
 		github.com/rheaditi
+		
+		Abinav Nithya Seelan
+		github.com/abinavseelan
 
 	* Problem Statement:
 		Write a yacc program that accepts a regular expression
 		as input and produces its parse tree as output.
 
 */
-/* Declaration section, copied verbatim to the oupud y.tab.c file */
+/* Declaration section, copied verbatim to the output y.tab.c file */
 #include <stdio.h>
 #include <stdlib.h> //for exit()
 #include <string.h> // for strcpy(), strlen()
