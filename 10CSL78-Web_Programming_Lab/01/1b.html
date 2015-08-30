@@ -1,0 +1,36 @@
+<!--
+Develop and demonstrate a XHTML file that includes Javascript script for the following problems:
+		a)	Input:    A number n obtained using prompt
+				Output: The first n Fibonacci numbers
+		b)	Input:     A number n obtained using prompt
+				Output:  A table of numbers from 1 to n and their  squares using alert
+-->
+
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head><title>Program 1b</title></head>
+
+	<body>
+		
+		<script type="text/javascript">
+				var n = prompt("Enter a number:");
+				if(n!=null && n>0){
+						var outputAlert = "", outputHtml = "";
+						outputAlert += "Numbers and their Squares are:\n";
+						outputHtml += "<h1>Numbers &amp; Squares</h1><table border=\"1px\"><tr><th>Number</th><th>Square</th></tr>";
+						for(var i=1; i<=n; i++){
+								outputAlert += i + "    " + (i*i) + "\n";
+								outputHtml += "<tr><td>" + i + "</td><td>" + (i*i) + "</td></tr>";
+						}
+						outputHtml += "</table>";
+						document.write(outputHtml);
+						alert(outputAlert);
+				}
+				else{
+					alert("No Proper Input!");
+				}
+		</script>
+	</body>
+</html>

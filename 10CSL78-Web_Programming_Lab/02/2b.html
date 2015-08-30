@@ -1,0 +1,60 @@
+<!--
+	2a)
+	Develop and demonstrate, using Javascript script, a XHTML document that collects the USN ( the valid format is: A digit from 1 to 4 followed by two upper-case characters followed by two digits followed by two upper-case characters followed by three digits; no embedded spaces allowed) of the user. Event handler must be included for the form element that collects this information to validate the input. Messages in the alert windows must be produced when errors are detected.
+	2b) 
+	Modify the above program to get the current semester also (restricted to be a number from 1 to 8) 
+-->
+
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<title>Program 2b</title>
+		<script type="text/javascript">
+		var validate = function (usn, sem){
+			var USNre = /^[1-4][A-Z]{2}[0-9]{2}[A-Z]{2}[0-9]{3}$/;
+			var SEMre = /^[1-8]$/;
+			var output = "";
+			if(usn.value == "" || sem.value == ""){
+				alert("Input missing!");
+				return;
+			}
+			var USNisValid = usn.value.match(USNre);
+			var SEMisValid = sem.value.match(SEMre);
+			if(USNisValid){
+				output += "USN is valid!\n";
+			}
+			else{
+				output += "USN is INVALID!\n";	
+			}
+			if(SEMisValid){
+				output += "Semester is valid!\n";
+			}
+			else{
+				output += "Semester is INVALID!\n";	
+			}
+			alert(output);
+		}
+		</script>
+	</head>
+
+	<body style="text-align: center;">
+		<h1 style="display: inline-block;">USN Validation</h1><br/>
+		<form action="" style="display: inline-block;">
+			<table cellpadding="10">
+				<tr>
+					<td><label for="usn">USN:</label></td>
+					<td><input type="text" name="usn"/></td>
+				</tr>
+				<tr>
+					<td><label for="sem">Semester:</label></td>
+					<td><input type="text" name="sem"/></td>
+				</tr>
+			</table>
+			<input type="submit" name="submit" value="Validate" onclick="validate(usn,sem)" />
+			<input type="reset" name="reset" value="Clear" />
+		</form>
+	</body>
+
+</html>
