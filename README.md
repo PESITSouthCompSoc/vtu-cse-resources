@@ -1,6 +1,6 @@
 # Resources for VTU
 
-Laboratory programs and other resources that we think our fellow students under VTU Belgaum would find useful.
+Laboratory programs and other resources that might be useful for fellow students of CSE under VTU Belgaum.
 
 ## Contents 
 
