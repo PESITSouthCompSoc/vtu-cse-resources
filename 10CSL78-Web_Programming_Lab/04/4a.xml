@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<!-- Obtain stylesheet. Note that the xml file & css file should be in the same directory/location -->
+<?xml-stylesheet type="text/css" href="4a.css" ?>
+<student>
+        <title>Student 1</title>
+        <info>
+            <label>USN:</label><usn>1PE12CS006</usn>
+            <label>Name:</label><name>Aditi Mohanty</name>
+            <label>College:</label><coll>PESIT South Campus</coll>
+            <label>Branch:</label><branch>CSE</branch>
+            <label>Year Of Joining:</label><yoj>2012</yoj>
+            <label>Email-ID:</label><email>rheaditi@yahoo.in</email>
+        </info>
+        <title>Student 2</title>
+        <info>
+            <label>USN:</label><usn>1PE12IS098</usn>
+            <label>Name:</label><name>Angad Kohli</name>
+            <label>College:</label><coll>PESIT South Campus</coll>
+            <label>Branch:</label><branch>ISE</branch>
+            <label>Year Of Joining:</label><yoj>2012</yoj>
+            <label>Email-ID:</label><email>angad@gmail.com</email>
+        </info>
+        <title>Student 3</title>
+        <info>
+            <label>USN:</label><usn>1RN12IS092</usn>
+            <label>Name:</label><name>Maitree Singh</name>
+            <label>College:</label><coll>RNS Institute of Technology</coll>
+            <label>Branch:</label><branch>ISE</branch>
+            <label>Year Of Joining:</label><yoj>2012</yoj>
+            <label>Email-ID:</label><email>maitree@mailinator.com</email>
+        </info>
+</student>

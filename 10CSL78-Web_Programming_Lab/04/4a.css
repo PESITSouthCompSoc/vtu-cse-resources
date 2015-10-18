@@ -1,0 +1,49 @@
+ /* Define styling properties for each tag of the xml file */
+ * {
+ 	margin: 0;
+ 	padding: 0;
+ 	font-size: 11px;
+ 	font-family: Ubuntu, sans-serif;
+ 	font-weight: 400;
+ }
+ student { 	
+ 	padding: 5px;
+ 	width: 100%;
+ 	font-weight: 100;
+ }
+
+title {
+	display: block;
+	font-size: 1.5em;
+	font-weight: 200;
+	text-transform: uppercase;
+	border-bottom: 2px dashed #2bbbad;
+	margin-bottom: 5px;
+}
+
+info {
+	margin-left: 20px;
+	display: block;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	position: relative;
+}
+
+label {
+	font-weight: 600;
+	position: relative;
+	left:0;
+}
+
+usn, name, coll, branch, yoj, email {
+	display: block;
+}
+
+email {
+	font-style: italic;
+}
+ /*student {margin-top:15px;font-weight:bold;color:black;}
+ info {display:block;margin-left:15px;color:gray;}
+ usn, name {color:red;font-size:15pt;}
+ coll, branch {color:blue;font-size:15pt;}
+ yoj, email {color:green;font-size:15pt;}*/
