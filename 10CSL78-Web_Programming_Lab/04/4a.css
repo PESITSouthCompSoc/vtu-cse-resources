@@ -42,8 +42,3 @@ usn, name, coll, branch, yoj, email {
 email {
 	font-style: italic;
 }
- /*student {margin-top:15px;font-weight:bold;color:black;}
- info {display:block;margin-left:15px;color:gray;}
- usn, name {color:red;font-size:15pt;}
- coll, branch {color:blue;font-size:15pt;}
- yoj, email {color:green;font-size:15pt;}*/
