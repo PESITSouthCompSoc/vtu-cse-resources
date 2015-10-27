@@ -33,32 +33,46 @@
 					top: 100px;
 					left: 100px;
 					background-color: #2bbbad;
-					z-index: 0;
+					z-index: 1;
 				}
 				#two {
 					top: 150px;
 					left: 150px;
 					background-color: #8560a8;
-					z-index: 1;
+					z-index: 2;
 				}
 				#three {
 					top: 200px;
 					left: 200px;
 					background-color: #e87a9c;
-					z-index: 2;
+					z-index: 3;
 				}
 
-				#one:hover, #two:hover, #three:hover {
-					z-index: 4;
-				}
 			</style>
+			<script type="text/javascript">
+			var topPara, topOldIndex;
+
+			var toTop = function (topID){
+				topPara = document.getElementById(topID);
+				topOldIndex = topPara.style.zIndex;
+				topPara.style.zIndex = 4;
+				console.log("I'm uuuup!");
+			}
+
+			var toBack = function (topID) {
+				topPara = document.getElementById(topID);
+				topPara.style.zIndex = topOldIndex;
+				console.log("I'm down =(");
+			}
+
+			</script>
 	</head>
 
 	<body>
-		<h1>Paragraph Stacking</h1><br />
-		<p id="one">Liquorice macaroon dessert jelly beans chocolate cake oat cake. Dessert pudding wafer croissant. Gingerbread lollipop donut toffee cupcake chocolate cake tart icing. I love chocolate bar gummies I love.</p>
-		<p id="two">Sesame snaps lemon drops chocolate bar jelly-o jujubes sesame snaps. Gummi bears toffee pie chupa chups sesame snaps lemon drops. Pie chocolate cake oat cake.
+		<h1>Paragraph Stacking #2</h1><br />
+		<p id="one" onmouseover="toTop('one')" onmouseout="toBack('one')">Liquorice macaroon dessert jelly beans chocolate cake oat cake. Dessert pudding wafer croissant. Gingerbread lollipop donut toffee cupcake chocolate cake tart icing. I love chocolate bar gummies I love.</p>
+		<p id="two" onmouseover="toTop('two')" onmouseout="toBack('two')">Sesame snaps lemon drops chocolate bar jelly-o jujubes sesame snaps. Gummi bears toffee pie chupa chups sesame snaps lemon drops. Pie chocolate cake oat cake.
 Marzipan oat cake cotton candy. Fruitcake sweet roll chocolate cake cake pastry cake. Gummi bears danish cupcake. Brownie pudding tart ice cream icing.</p>
-		<p id="three">Danish gummi bears sesame snaps liquorice topping tart I love I love. Icing jelly-o souffle I love. Fruitcake sweet donut. Chupa chups souffle jujubes jelly beans gummi bears dessert croissant croissant.</p>
+		<p id="three" onmouseover="toTop('three')" onmouseout="toBack('three')">Danish gummi bears sesame snaps liquorice topping tart I love I love. Icing jelly-o souffle I love. Fruitcake sweet donut. Chupa chups souffle jujubes jelly beans gummi bears dessert croissant croissant.</p>
 	</body>
 </html>
