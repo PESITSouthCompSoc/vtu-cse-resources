@@ -1,0 +1,27 @@
+TitleText: Program 01
+XUnitText: Bandwidth
+YUnitText: # Packets Dropped
+Background: Black
+Foreground: White
+LineWidth: 3
+
+"TCP"
+0.7 12
+1.0	12
+1.2	13
+1.4	12
+1.5 13
+1.6	13
+1.8	10
+2.0	11
+
+
+"UDP"
+0.7 582
+1.0	332
+1.2	232
+1.4	132
+1.5 81
+1.6	31
+1.8	0
+2.0	0
