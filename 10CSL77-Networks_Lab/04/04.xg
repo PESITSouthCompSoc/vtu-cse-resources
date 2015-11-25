@@ -1,0 +1,18 @@
+TitleText: Program 4
+XUnitText: ErrorRate
+YUnitText: Throughput (Mbps)
+LineWidth: 3
+Background: White
+
+"Throughput vs ErrorRate"
+0.025 2.440889
+0.050 2.399111
+0.075 2.351556
+0.100 2.308889
+0.200 2.149778
+0.250 1.895111
+0.300 1.771111
+0.400 1.504000
+0.500 0.968000
+0.600 0.684889
+
