@@ -1,0 +1,18 @@
+TitleText: Program 3
+XUnitText: IntervalTime
+YUnitText: Packets Dropped
+LineWidth: 3
+Background: White
+
+"Drops"
+0.002 40
+0.003 28
+0.005 16
+0.010 8
+0.015 8
+0.020 4
+0.030 8
+0.040 0
+0.045 4
+0.050 4
+0.060 4
