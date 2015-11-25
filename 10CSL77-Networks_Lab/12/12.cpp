@@ -55,14 +55,14 @@ int main(){
 					//partially transmissible in this cycle
 					else{
 						output = output_rate;
-						pkt_size_rem -+ output_rate;
+						pkt_size_rem -= output_rate;
 					}
 					cout << "Packet of size " << output << " transmitted.\n";
 					cout << pkt_size_rem << " bytes left to transmit.\n";
 				}
 				//if nothing left to transmit
 				else{
-					cout << "Time left for transmission: " << pk_time << " units.\n";
+					cout << "Time left for transmission: " << clk-pk_time << " units.\n";
 					cout << "No packets left to transmit!\n";
 					break;
 				}
