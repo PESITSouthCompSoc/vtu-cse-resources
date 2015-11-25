@@ -1,6 +1,6 @@
-`$ g++ 08.cpp`
-`$ ./a.out`
 ```
+$ g++ 08.cpp
+$ ./a.out
 Enter number of nodes: 3
 Enter distance matrix(99 for infinity):
 0 2 99
