@@ -32,9 +32,10 @@ int main(){
 	}
 
 	if( bind(sdesc, (struct sockaddr *) &address, sizeof(address)) == -1 ){
-		perror("connect") ;
-	}
-	cout << "Bound to socket, listening for connections...\n\n";
+		perror("bind") ; 
+		return -1; 
+	} 
+	cout << "Bound to socket, listening for	connections...\n\n";
 
 	//int listen(int sockfd, int backlog); -> backlog = length of queue for socket requests
 	listen(sdesc,3);
